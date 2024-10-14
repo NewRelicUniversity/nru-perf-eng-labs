@@ -1,3 +1,7 @@
+# Disclaimer
+
+This presentation and the information herein (including any information that may be incorporated by reference) is provided for informational purposes only and should not be construed as an offer, commitment, promise or obligation on behalf of New Relic, Inc. (“New Relic”) to sell securities or deliver any product, material, code, functionality, or other feature. Any information provided hereby is confidential and proprietary to New Relic and may not be replicated or disclosed without New Relic’s express written permission.
+
 # _Lab:_ Creating alert conditions with guided mode
 
 **Objective:** Use New Relic’s guided mode to create two alert conditions: 
