@@ -109,7 +109,7 @@ Select a matching log entry and notice the custom attributes that were recorded.
 
 ---
 
-# _Lab_: Using New Relic APM to troubleshoot a database performance problem
+# _Lab:_ Using New Relic APM to troubleshoot a database performance problem
 
 **Objective:** Use the features of New Relic APM, such as the _Databases_ page and transaction traces, to identify the cause of slow database performance.
 
@@ -138,7 +138,7 @@ Scroll further down the transaction detail page and select a transaction trace w
 
 ---
 
-_Lab:_ Using integrated APM and Infrastructure to troubleshoot a performance problem
+# _Lab:_ Using integrated APM and Infrastructure to troubleshoot a performance problem
 
 **Objective:** The New Relic Pet Clinic application experienced a sudden increase in response time. Use integrated APM and Infrastructure to investigate the problem.
 
@@ -161,7 +161,7 @@ response time?
 
 ---
 
-_Lab:_ Creating Synthetics monitors
+# _Lab:_ Creating Synthetics monitors
 
 **Objective**: Understand the various types of Synthetics monitors and practice creating Availability, Page load performance, and Step builder monitors.
 
@@ -196,4 +196,4 @@ Click the _Validate_ button to confirm that your monitor runs successfully.
 
 ---
 
-_Lab:_ Using cloud integrations
+# _Lab:_ Using cloud integrations
