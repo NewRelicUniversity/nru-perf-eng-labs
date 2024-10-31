@@ -149,6 +149,7 @@ In New Relic, open the NRQL console (_Query your data_ at the bottom of the page
 
 ## Additional resources
 [Introduction to custom events and attributes](https://docs.newrelic.com/docs/data-apis/custom-data/custom-events/report-custom-event-data/)
+
 ---
 
 # _Lab:_ Using New Relic APM to troubleshoot a database performance problem
