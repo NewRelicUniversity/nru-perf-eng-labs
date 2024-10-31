@@ -2,6 +2,8 @@
 
 This presentation and the information herein (including any information that may be incorporated by reference) is provided for informational purposes only and should not be construed as an offer, commitment, promise or obligation on behalf of New Relic, Inc. (“New Relic”) to sell securities or deliver any product, material, code, functionality, or other feature. Any information provided hereby is confidential and proprietary to New Relic and may not be replicated or disclosed without New Relic’s express written permission.
 
+---
+
 # _Lab:_ Creating alert conditions with guided mode
 
 **Objective:** Use New Relic’s guided mode to create two alert conditions: 
@@ -234,6 +236,39 @@ Create a Step builder monitor that performs the following steps:
 
 Click the _Validate_ button to confirm that your monitor runs successfully.
 
+## Additional resources
+[Synthetic monitoring best practices](https://docs.newrelic.com/docs/new-relic-solutions/best-practices-guides/full-stack-observability/synthetic-monitoring-best-practices-guide/)
+
 ---
 
 # _Lab:_ Using cloud integrations
+
+**Objective**: Learn how to use prebuilt dashboards to query and view cloud integration data.
+
+## Step 1: Log into the training account
+In a private browser window, use the following credentials to log into New Relic: 
+
+- URL: [https://one.newrelic.com/](https://one.newrelic.com/)
+- Email: demotron@newrelicuniversity.com
+- Password: o11y-as-code
+
+## Step 2
+From New Relic’s main menu, select _Dashboards_. Click _View all_ beside the **Recommended Dashboards** heading near the top of the page.
+
+## Step 3
+From the list of categories on the left side, select _Amazon Web Services_. Browse the list of available dashboards. _**Note**: The training account already contains several AWS dashboards. Please do not add any dashboards to the account._
+
+## Step 4
+Use your browser’s back button to return to the list of dashboards in the training account. In _Search by entity name_, enter “Amazon” and/or “AWS” to view the AWS dashboards that have been added to the account.
+
+## Step 5
+Select one of the dashboards, such as [Amazon API Gateway](https://onenr.io/0VjY2L2b0Q0), [Amazon EC2](https://onenr.io/0MRNVNVXKRn), [Amazon S3](https://onenr.io/0BR63n38JjO), or [AWS ALB](https://onenr.io/00jlqZqKEQW). Click the ellipsis (...) button above one or more of the charts and select _View query_ to see how the chart is generated.
+
+## Step 6
+Open the [New Relic documentation](https://docs.newrelic.com/) and see if you can find a topic documenting the metrics used by your selected dashboard.
+
+## Additional resources
+- [Introduction to AWS integrations](https://docs.newrelic.com/docs/infrastructure/amazon-integrations/get-started/introduction-aws-integrations/)
+- [Introduction to GCP integrations](https://docs.newrelic.com/docs/infrastructure/google-cloud-platform-integrations/get-started/introduction-google-cloud-platform-integrations/)
+- [Introduction to Azure integrations](https://docs.newrelic.com/docs/infrastructure/microsoft-azure-integrations/get-started/introduction-azure-monitoring-integrations/)
+- [Recommended dashboards](https://docs.newrelic.com/docs/query-your-data/explore-query-data/dashboards/prebuilt-dashboards/)
