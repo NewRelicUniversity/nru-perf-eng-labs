@@ -109,8 +109,44 @@ Select a matching log entry and notice the custom attributes that were recorded.
 
 # _Lab:_ Collecting custom attributes
 
-**Objective:** Add New Relic to a sample APM service and collect custom business metrics.
+**Objective:** Add code to a sample APM service to collect custom business metrics.
 
+## Step 1
+For this lab, you will send data to your personal New Relic account. In a private browser window, visit [https://one.newrelic.com/](https://one.newrelic.com/) and log into your personal account.
+
+## Step 2
+In another browser tab, use the link provided by the instructor to start the virtual lab environment. Click _Start_, then wait a moment for the enviroment to start up.
+
+## Step 3
+In your New Relic account, go to the [API keys UI page](https://one.newrelic.com/launcher/api-keys-ui.api-keys-launcher) and select _Create a key._ For _Key type_, select “Ingest - License”. Save the new key and copy it to your clipboard.
+
+## Step 4
+The sample application already includes the New Relic APM agent, but it needs a license key to know which account to send data to. In the virtual lab environment, select the _Editor_ tab and open the `.env` file. Paste your license key after `NEW_RELIC_LICENSE_KEY=`. The file will save automatically.
+
+## Step 5
+In the _Terminal_, execute the following command to start the application: `npm start > /dev/null &`. Confirm that the **FoodMe** application appears under _Services - APM_ in your New Relic account.
+
+## Step 6
+You may interact with the application on the _FoodMe_ tab of the lab environment. If you select the application in New Relic, you will see that the agent is sending default performance data: transaction response times, errors, throughput, Infrastructure data, etc. If you owned the FoodMe company, what other (business) metrics might you want to capture?
+
+## Step 7
+In the _Terminal_, execute the following command to stop the application: `pkill npm`. In the _Editor_, open _server > index.js_. Find the comment block labeled “Custom attributes”. Add a trailing slash after the second line of asterisks to uncomment the code.
+
+The code gets the current `order` object from the incoming request and calculates the number of items being ordered and the total order amount. It then calls the `newrelic.addCustomAttributes()` method of the APM agent API to add four custom attributes to the `Transaction` event of the `/api/order` transaction: `customer`, `restaurant`, `itemCount`, and `orderTotal`.
+
+## Step 8
+In the _Terminal_, restart the application: `npm start > /dev/null &`. On the _FoodMe_ tab, enter a customer name and address and place some orders. (You may optionally execute the commands in the _Instructions_ panel to run a script that generates orders automatically.)
+
+## Step 9
+In New Relic, open the NRQL console (_Query your data_ at the bottom of the page). See if you can write queries to answer the following questions: 
+
+- Which restaurants have received the most orders?
+- Which customers have placed the most orders?
+- What is the total dollar amount of orders received?
+- Which restaurants have generated the most sales?
+
+## Additional resources
+[Introduction to custom events and attributes](https://docs.newrelic.com/docs/data-apis/custom-data/custom-events/report-custom-event-data/)
 ---
 
 # _Lab:_ Using New Relic APM to troubleshoot a database performance problem
