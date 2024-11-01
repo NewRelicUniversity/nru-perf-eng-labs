@@ -132,7 +132,7 @@ In the _Terminal_, execute the following command to start the application: `npm 
 You may interact with the application on the _FoodMe_ tab of the lab environment. If you select the application in New Relic, you will see that the agent is sending default performance data: transaction response times, errors, throughput, Infrastructure data, etc. If you owned the FoodMe company, what other (business) metrics might you want to capture?
 
 ## Step 7
-In the _Terminal_, execute the following command to stop the application: `pkill npm`. In the _Editor_, open _server > index.js_. Find the comment block labeled “Custom attributes”. Add a trailing slash after the second line of asterisks to uncomment the code.
+In the _Terminal_, execute the following command to stop the application: `npm stop`. In the _Editor_, open _server > index.js_. Find the comment block labeled “Custom attributes”. Add a trailing slash after the second line of asterisks to uncomment the code.
 
 The code gets the current `order` object from the incoming request and calculates the number of items being ordered and the total order amount. It then calls the `newrelic.addCustomAttributes()` method of the APM agent API to add four custom attributes to the `Transaction` event of the `/api/order` transaction: `customer`, `restaurant`, `itemCount`, and `orderTotal`.
 
