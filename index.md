@@ -30,16 +30,16 @@ Select _Use guided mode_. Your first alert condition will monitor APM services, 
 On the next page, use _Filter by name or tags_ to filter the list of services to those containing a value of “Production” in the “Environment” tag. Select the matching services.
 
 ## Step 5
-Scroll down to _Select a metric to monitor_. From the list of golden metrics, select _Response time (ms)_. Note the automatically-generated NRQL query, then click _Next_.
+Scroll down to **Select a metric to monitor**. From the list of golden metrics, select _Response time (ms)_. Note the automatically-generated NRQL query, then click _Next_.
 
 ## Step 6
-On the next page, under _Set condition thresholds_, configure a static threshold to open an incident of critical severity when a query returns a value above 500 (ms) for at least 5 minutes. Note that you may optionally add a second threshold to create an incident of warning severity. Click _Next_.
+On the next page, under **Set condition thresholds**, configure a static threshold to open an incident of critical severity when a query returns a value above 500 (ms) for at least 5 minutes. Note that you may optionally add a second threshold to create an incident of warning severity. Click _Next_.
 
 ## Step 7
 On the final page, give your alert condition a descriptive name, such as “[Your initials] Production services response time > 500 ms”. 
 
 ## Step 8
-Under _Connect this condition to a policy_, select _New policy_ and create a new alert policy to contain your conditions. Give it a name you will recognize as yours, such as “[Your initials] Alert policy”. Accept the defaults for all other options.
+Under **Connect this condition to a policy**, select _New policy_ and create a new alert policy to contain your conditions. Give it a name you will recognize as yours, such as “[Your initials] Alert policy”. Accept the defaults for all other options.
 
 ## Step 9
 Click _Save & set up notifications_. When prompted to create a workflow, select _Cancel_.
@@ -57,15 +57,56 @@ Repeat the above steps to create a second alert condition: Open a critical incid
 From New Relic’s main menu, select _Alerts_ > _Alert Conditions_, then click _+ New alert condition_ in the upper-right.
 
 ## Step 2
-Select _Write your own query_. **Challenge:** See if you can write a query that returns the average CPU usage for any host running the New Relic Pet Clinic APM service. (Try asking AI and seeing how it does.) When you have a working query, click _Next_.
+Select _Write your own query_. **Challenge:** See if you can write a query that returns the number of `/api/order` transactions in the `FoodMe + Custom Attributes` application with an orderTotal > 1000. (Try asking AI and seeing how it does.) When you have a working query, click _Next_.
 
 ## Step 3
-On the next page, under _Set condition thresholds_, configure a static threshold to open an incident of critical severity when a query returns a value above 50 (%) for at least 3 minutes. If you wish, create a second threshold to open an incident of warning severity when a query returns a value above 20 (%) for at least 2 minutes. Click _Next_.
+On the next page, under **Fine-tune your signal**, select the appropriate streaming method for a signal that occurs infrequently (in this case, orders over $1000). Consult [the documentation](https://docs.newrelic.com/docs/alerts/create-alert/fine-tune/streaming-alerts-key-terms-concepts/#aggregation-methods) if you need help.
 
 ## Step 4
+Under **Set condition thresholds**, configure a static threshold to open a critical incident when a query returns a value above 0 at least once in 2 minutes. 
+
+## Step 5
+Click _+ Add lost signal threshold_. Configure the signal to be considered lost after 5 minutes. Tick the box to “Close all current open incidents” on signal loss; deselect the other options. Click _Save_.
+
+## Step 6
 Add the new condition to the alert policy you created in the previous lab.
 
 ---
+
+# _Lab:_ Configuring alert notifications
+
+**Objective:** Configure a workflow to connect alert issues to one or more notification channels, and configure an email destination to notify you when an alert issue is opened, closed, or acknowleged.
+
+## Step 1
+From New Relic’s main menu, select _Alerts_ > _Workflows_, then click _+ Add a workflow_ in the upper-right.
+
+## Step 2
+Under **Configure your workflow**, give your workflow a name you will recognize, such as “[Your initials] Workflow”.
+
+## Step 3
+Under **Filter data**, create a Basic or Advanced filter that matches the NRQL alert condition you created in the previous lab. You may use a Basic filter that matches your alert policy, or an Advanced filter that matches your alert condition name.  
+
+## Step 4
+Under **Notify**, select _Email_. Under **Email destination**, click in _Search by name or email_ and select “Create new destination”.
+
+## Step 5
+On the **Add a destination** page, select _+ Add email_ and enter your email address. Give the new destination a name, such as “[Your initials] Email”. Click _Save destination_.
+
+## Step 6
+Back on the **Email** page, confirm that your destination name appears under **Email destination**. If you wish, you may click _Send test notification_. Did you receive an email? 
+
+When the destination is configured correctly, click _Save_.
+
+## Step 7
+Back on the **Configure your workflow** page, click _Activate workflow_.
+
+## Step 8
+Test your workflow: In a web browser, visit [https://foodme.nru.to/](https://foodme.nru.to/). Enter a customer name and address. Select a restaurant, add some menu items to your cart, and click _Checkout_. On the payment page, adjust the quantity of some items so that the order total is greater than $1000. Complete the (fake) payment information and click _Purchase_.
+
+Within 2 minutes, you should receive an email notification that your alert condition has triggered a critical incident.
+
+---
+
 # _Lab:_ Using the New Relic Logs UI
 
 **Objective:** Practice using the New Relic Logs UI to search and analyze log data.
