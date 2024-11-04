@@ -39,13 +39,18 @@ On the next page, under **Set condition thresholds**, configure a static thresho
 On the final page, give your alert condition a descriptive name, such as “[Your initials] Production services response time > 500 ms”. 
 
 ## Step 8
-Under **Connect this condition to a policy**, select _New policy_ and create a new alert policy to contain your conditions. Give it a name you will recognize as yours, such as “[Your initials] Alert policy”. Accept the defaults for all other options.
+Under **Connect this condition to a policy**, select _New policy_ and create a new alert policy to contain your conditions. Give it a name you will recognize, such as “[Your initials] Alert policy”. Accept the defaults for all other options.
 
 ## Step 9
 Click _Save & set up notifications_. When prompted to create a workflow, select _Cancel_.
 
 ## Step 10
 Repeat the above steps to create a second alert condition: Open a critical incident if the New Relic Pet Clinic browser application has a page load time greater than 2 seconds for at least 5 minutes. Add the condition to the policy you just created.
+
+## Additional resources
+- [Alert conditions documentation](https://docs.newrelic.com/docs/alerts/create-alert/create-alert-condition/alert-conditions/)
+- [Set thresholds for alert conditions](https://docs.newrelic.com/docs/alerts/create-alert/set-thresholds/set-thresholds-alert-condition/)
+- [Decide when issues are created](https://docs.newrelic.com/docs/alerts/organize-alerts/specify-when-alerts-create-incidents/)
 
 ---
 
@@ -70,6 +75,10 @@ Click _+ Add lost signal threshold_. Configure the signal to be considered lost 
 
 ## Step 6
 Add the new condition to the alert policy you created in the previous lab.
+
+## Additional resources
+- [NRQL conditions documentation](https://docs.newrelic.com/docs/alerts/create-alert/create-alert-condition/create-nrql-alert-conditions/)
+- [Streaming alerts terms and concepts](https://docs.newrelic.com/docs/alerts/create-alert/fine-tune/streaming-alerts-key-terms-concepts/)
 
 ---
 
@@ -104,6 +113,10 @@ Back on the **Configure your workflow** page, click _Activate workflow_.
 Test your workflow: In a web browser, visit [https://foodme.nru.to/](https://foodme.nru.to/). Enter a customer name and address. Select a restaurant, add some menu items to your cart, and click _Checkout_. On the payment page, adjust the quantity of some items so that the order total is greater than $1000. Complete the (fake) payment information and click _Purchase_.
 
 Within 2 minutes, you should receive an email notification that your alert condition has triggered a critical incident.
+
+## Additional resources
+- [Workflows documentation](https://docs.newrelic.com/docs/alerts/get-notified/incident-workflows/)
+- [Destinations documentation](https://docs.newrelic.com/docs/alerts/get-notified/destinations/)
 
 ---
 
