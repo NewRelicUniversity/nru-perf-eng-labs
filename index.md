@@ -21,7 +21,7 @@ In a private browser window, use the following credentials to log into New Relic
 - The instructor will provide the password
 
 ## Step 2
-From New Relic’s main menu, select _Alerts_ > _Alert Conditions_, then click _+ New alert condition_ in the upper-right.
+Select the **NRU Training** account. From New Relic’s main menu, select _Alerts_ > _Alert Conditions_, then click _+ New alert condition_ in the upper-right.
 
 ## Step 3
 Select _Use guided mode_. Your first alert condition will monitor APM services, so select _Services - APM_ and click _Next_.
@@ -59,7 +59,7 @@ Repeat the above steps to create a second alert condition: Open a critical incid
 **Objective:** In the previous lab, you used New Relic’s guided mode to automatically generate NRQL queries for alert conditions. In this lab, you will create an alert condition by writing your own query.
 
 ## Step 1
-From New Relic’s main menu, select _Alerts_ > _Alert Conditions_, then click _+ New alert condition_ in the upper-right.
+Select the **NRU Training** account. From New Relic’s main menu, select _Alerts_ > _Alert Conditions_, then click _+ New alert condition_ in the upper-right.
 
 ## Step 2
 Select _Write your own query_. **Challenge:** See if you can write a query that returns the number of `/api/order` transactions in the `FoodMe + Custom Attributes` application with an orderTotal > 1000. (Try asking AI and seeing how it does.) When you have a working query, click _Next_.
@@ -87,7 +87,7 @@ Add the new condition to the alert policy you created in the previous lab.
 **Objective:** Configure a workflow to connect alert issues to one or more notification channels, and configure an email destination to notify you when an alert issue is opened, closed, or acknowleged.
 
 ## Step 1
-From New Relic’s main menu, select _Alerts_ > _Workflows_, then click _+ Add a workflow_ in the upper-right.
+Select the **NRU Training** account. From New Relic’s main menu, select _Alerts_ > _Workflows_, then click _+ Add a workflow_ in the upper-right.
 
 ## Step 2
 Under **Configure your workflow**, give your workflow a name you will recognize, such as “[Your initials] Workflow”.
@@ -125,7 +125,7 @@ Within 2 minutes, you should receive an email notification that your alert condi
 **Objective:** Practice using the New Relic Logs UI to search and analyze log data.
 
 ## Step 1
-From New Relic’s main menu, select _Logs_. Select the **NRU Demotron v4** account, and set the time picker to the past 60 minutes.
+Select the **NRU Demotron v4** account. From New Relic’s main menu, select _Logs_, then set the time picker to the past 6 hours.
 
 ## Step 2
 Filter the list to show only logs with a level of ERROR. How many logs are there?
@@ -149,7 +149,7 @@ How could you create an alert condition based on this log search?
 In a web browser, visit [https://foodme.nru.to/](https://foodme.nru.to/). Enter a customer name and address you will search for later. Select a restaurant and add some menu items to your cart, then complete your order. (_Tip:_ Try changing the item quantity to a very large value.) 
 
 ## Step 2
-From New Relic’s main menu, select _Logs_. Select the **NRU Training** account.
+Select the **NRU Training** account. From New Relic’s main menu, select _Logs_.
 
 ## Step 3
 Using the filter bar at the top of the page, try to find the order you just placed.
